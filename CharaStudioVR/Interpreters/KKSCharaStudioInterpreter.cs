@@ -193,6 +193,7 @@ namespace KKS_VR.Interpreters
                     VR.Camera.CopyFX(camera2);
                     var component2 = VR.Camera.gameObject.GetComponent<AmplifyColorEffect>();
                     if ((bool)component2) component2.enabled = true;
+                    PrivacyScreen.Initialize();
                 }
                 else
                 {
