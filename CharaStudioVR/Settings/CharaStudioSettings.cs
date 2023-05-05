@@ -6,6 +6,18 @@ namespace KKS_VR.Settings
     [XmlRoot("Settings")]
     public class CharaStudioSettings : VRSettings
     {
+        public bool PrivacyScreen
+        {
+            get => _PrivacyScreen;
+            set
+            {
+                _PrivacyScreen = value;
+                TriggerPropertyChanged("PrivacyScreen");
+            }
+        }
+
+        private bool _PrivacyScreen = true;
+
         private bool _LockRotXZ = true;
 
         private float _MaxVoiceDistance = 300f;

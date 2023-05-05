@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using BepInEx.Logging;
+using KKS_VR.Features;
 using Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -218,6 +219,10 @@ namespace KKS_VR.Interpreters
         public override bool IsIgnoredCanvas(Canvas canvas)
         {
             if ((bool)CommonSpaceGo && canvas.transform.IsChildOf(CommonSpaceGo.transform)) return true;
+            if (PrivacyScreen.IsOwnedCanvas(canvas))
+            {
+                return true;
+            }
             return base.IsIgnoredCanvas(canvas);
         }
     }

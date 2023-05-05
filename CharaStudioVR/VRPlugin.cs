@@ -5,6 +5,7 @@ using BepInEx;
 using BepInEx.Logging;
 using KKAPI;
 using KKS_VR.Controls;
+using KKS_VR.Features;
 using KKS_VR.Fixes;
 using KKS_VR.Interpreters;
 using KKS_VR.Settings;
@@ -119,7 +120,7 @@ namespace KKS_VR
             VRCameraMoveHelper.Install(obj);
             VRItemObjMoveHelper.Install(obj);
 
-            //todo PrivacyScreen.Initialize();
+            PrivacyScreen.Initialize();
 
             NativeMethods.DisableProcessWindowsGhosting();
 
