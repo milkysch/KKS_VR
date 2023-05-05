@@ -23,18 +23,22 @@ namespace KKS_VR.Interpreters
 
         private GameObject CommonSpaceGo;
 
+        private Fixes.Mirror.Manager _mirrorManager;
+
         public override IEnumerable<IActor> Actors => _Actors.Cast<IActor>();
 
         protected override void OnAwake()
         {
             base.OnAwake();
             SceneManager.sceneLoaded += OnSceneLoaded;
+            _mirrorManager = new Fixes.Mirror.Manager();
         }
 
         private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
         {
             if (!CommonSpaceGo) CommonSpaceGo = Manager.Scene.commonSpace;
             FixMenuCanvasLayers();
+            foreach (var reflection in FindObjectsOfType<MirrorReflection>()) _mirrorManager.Fix(reflection);
         }
 
         protected override void OnStart()

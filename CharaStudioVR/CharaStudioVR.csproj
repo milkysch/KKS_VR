@@ -192,6 +192,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\PrivacyScreen.cs" />
+    <Compile Include="Fixes\Mirror\Manager.cs" />
+    <Compile Include="Fixes\Mirror\VRReflection.cs" />
     <Compile Include="Settings\CharaStudioContext.cs" />
     <Compile Include="StudioStandingMode.cs" />
     <Compile Include="Controls\GripMenuHandler.cs" />
@@ -212,6 +215,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Util\ColorZOrderShader" />
+    <EmbeddedResource Include="Fixes\Mirror\mirror-shader" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
